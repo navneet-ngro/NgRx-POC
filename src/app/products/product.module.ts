@@ -9,9 +9,9 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
 
 /* NgRx */
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './state/product.reducer';
+import { reducer } from './store/reducers/product.reducer';
 import { EffectsModule } from '@ngrx/effects';
-import { ProductEffects } from './state/product.effects';
+import { ProductEffects } from './store/effetcs/product.effects';
 
 const productRoutes: Routes = [
   { path: '', component: ProductShellComponent }

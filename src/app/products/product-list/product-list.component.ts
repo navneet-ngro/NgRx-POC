@@ -5,9 +5,9 @@ import { Subscription } from 'rxjs';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 import { Store, select } from '@ngrx/store';
-import * as fromProduct from "../state/product.reducer";
-import * as fromProductSelectors from "../state/product.selectors";
-import * as fromProductActions from "../state/product.actions";
+import { ProductState } from '../store/product.state';
+import * as fromProductSelectors from "../store/selectors/product.selectors";
+import * as fromProductActions from "../store/actions/product.actions";
 
 @Component({
   selector: 'pm-product-list',
@@ -26,7 +26,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   selectedProduct: Product | null;
   sub: Subscription;
 
-  constructor(private store: Store<fromProduct.State>,
+  constructor(private store: Store<ProductState>,
               private productService: ProductService) { }
 
   ngOnInit(): void {
