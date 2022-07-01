@@ -1,6 +1,5 @@
 import { Product } from "../product";
 import * as fromRoot from "../../state/app.state";
-import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { ProductActions, ProductActionTypes } from "./product.actions";
 
 export interface State extends fromRoot.State {
@@ -18,10 +17,6 @@ const initialState: ProductState = {
   currentProduct: null,
   products: []
 };
-
-const getProductFeatureState = createFeatureSelector<ProductState>(`products`);
-export const getShowProductCode = createSelector(getProductFeatureState, state => state.showProductCode);
-export const getProducts = createSelector(getProductFeatureState, state => state.products);
 
 export function reducer(state = initialState, action : ProductActions) : ProductState {
   switch (action.type) {

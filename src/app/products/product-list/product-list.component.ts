@@ -6,6 +6,7 @@ import { Product } from '../product';
 import { ProductService } from '../product.service';
 import { Store, select } from '@ngrx/store';
 import * as fromProduct from "../state/product.reducer";
+import * as fromProductSelectors from "../state/product.selectors";
 import * as fromProductActions from "../state/product.actions";
 
 @Component({
@@ -34,13 +35,13 @@ export class ProductListComponent implements OnInit, OnDestroy {
     );
 
     this.store.dispatch(new fromProductActions.Load());
-    this.store.pipe(select(fromProduct.getProducts))
+    this.store.pipe(select(fromProductSelectors.getProducts))
       .subscribe((products: Product[]) => {
         this.products = products;
       });
 
     // TODO: Unsubscribe
-    this.store.pipe(select(fromProduct.getShowProductCode)).subscribe(
+    this.store.pipe(select(fromProductSelectors.getShowProductCode)).subscribe(
       showProductCode => {
           this.displayCode = showProductCode;
       });
