@@ -10,8 +10,7 @@ export enum ProductActionTypes {
 
 export class ToggleProductCode implements Action {
   readonly type = ProductActionTypes.ToggleProductCode;
-  constructor (public payload: boolean) {
-  }
+  constructor (public payload: boolean) {}
 }
 
 export class Load implements Action {
@@ -19,12 +18,12 @@ export class Load implements Action {
 }
 
 export class LoadSuccess implements Action {
-  type = ProductActionTypes.LoadSuccess;
+  readonly type = ProductActionTypes.LoadSuccess;
   constructor(public payload: Product[]) {}
 }
 
 export class LoadFail implements Action {
-  type = ProductActionTypes.LoadFail;
+  readonly type = ProductActionTypes.LoadFail;
   constructor(public payload: string) {}
 }
 

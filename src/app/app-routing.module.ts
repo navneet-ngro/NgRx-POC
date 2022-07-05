@@ -18,6 +18,10 @@ const appRoutes: Routes = [
         // canActivate: [AuthGuard],
         loadChildren: './products/product.module#ProductModule'
       },
+      {
+        path: `primeng-table`,
+        loadChildren: './primeng-table/primeng-table.module#PrimengTableModule'
+      },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
     ]
   },
