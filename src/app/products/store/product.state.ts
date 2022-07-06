@@ -1,6 +1,6 @@
 
 import * as fromRoot from "../../store/app.state";
-import { Product } from "../product";
+import { IProduct } from "../product.interface";
 
 export interface State extends fromRoot.State {
   products: ProductState;
@@ -8,8 +8,8 @@ export interface State extends fromRoot.State {
 
 export interface ProductState {
   showProductCode: boolean;
-  currentProduct: Product;
-  products: Product[];
+  currentProduct: IProduct;
+  products: IProduct[];
 }
 
 export const initialState: ProductState = {

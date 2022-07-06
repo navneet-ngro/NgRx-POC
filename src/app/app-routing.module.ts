@@ -19,8 +19,8 @@ const appRoutes: Routes = [
         loadChildren: './products/product.module#ProductModule'
       },
       {
-        path: `primeng-table`,
-        loadChildren: './primeng-table/primeng-table.module#PrimengTableModule'
+        path: `sales`,
+        loadChildren: './sales/sales.module#SalesModule'
       },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
     ]

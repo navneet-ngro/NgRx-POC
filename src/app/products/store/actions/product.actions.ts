@@ -1,5 +1,5 @@
 import { Action } from "@ngrx/store";
-import { Product } from "../../product";
+import { IProduct } from "../../../products/product.interface";
 
 export enum ProductActionTypes {
   ToggleProductCode = '[Product] Toggle Product Code', // don't use back tick quote here, will throw error
@@ -19,7 +19,7 @@ export class Load implements Action {
 
 export class LoadSuccess implements Action {
   readonly type = ProductActionTypes.LoadSuccess;
-  constructor(public payload: Product[]) {}
+  constructor(public payload: IProduct[]) {}
 }
 
 export class LoadFail implements Action {

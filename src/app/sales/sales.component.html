@@ -1,28 +1,26 @@
+<p-tabMenu [model]="meniItems" [activeItem]="activeItem"></p-tabMenu>
+
 <p-table
   [columns]="columns"
   scrollDirection="both"
-  [value]="sales"
+  [value]="values"
   [scrollable]="true"
 >
-  <ng-template pTemplate="header" let-columns pFrozenColumn>
+  <ng-template pTemplate="header" let-columns>
     <tr>
       <th
         style="width: 150px"
-        *ngFor="let col of columns; let i = index"
-        pFrozenColumn
-        [frozen]="columns[i].isFrozen"
+        *ngFor="let col of columns; let i = index; trackBy: i;"
       >
         {{ col.field }}
       </th>
     </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-rowData let-columns="columns" pFrozenColumn>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
     <tr>
       <td
         style="width: 150px"
         *ngFor="let col of columns; let i = index"
-        pFrozenColumn
-        [frozen]="columns[i].isFrozen"
       >
         {{ rowData[col.field] }}
       </td>

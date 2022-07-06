@@ -12,6 +12,10 @@ import { StoreModule } from '@ngrx/store';
 import { reducer } from './store/reducers/product.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { ProductEffects } from './store/effetcs/product.effects';
+import { ProductService } from './product.service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ProductAPI } from './product-api';
+import { HttpClientModule } from '@angular/common/http';
 
 const productRoutes: Routes = [
   { path: '', component: ProductShellComponent }
@@ -22,12 +26,15 @@ const productRoutes: Routes = [
     SharedModule,
     RouterModule.forChild(productRoutes),
     StoreModule.forFeature('products', reducer),
-    EffectsModule.forFeature([ProductEffects])
+    EffectsModule.forFeature([ProductEffects]),
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forFeature(ProductAPI),
   ],
   declarations: [
     ProductShellComponent,
     ProductListComponent,
     ProductEditComponent
-  ]
+  ],
+  providers: [ProductService]
 })
 export class ProductModule { }
