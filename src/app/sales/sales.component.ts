@@ -1,9 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { IProduct } from '../products/product.interface';
-import { columnConfig1, columnConfig2 } from './config/column-config'
+import { columnConfig1, columnConfig2, columnConfig3, columnConfig4, columnConfig5, columnConfig6 } from './config/column-config'
 import { IColumnConfig } from './sales.interface';
 import { SalesService } from './services/sales.service';
+
+const labels = [
+  `Jan-Feb`,
+  `Mar-Apr`,
+  `May-June`,
+  `July-Aug`,
+  `Sept-Oct`,
+  `Nov-Dev`
+];
 
 @Component({
   selector: 'app-grid',
@@ -11,43 +20,61 @@ import { SalesService } from './services/sales.service';
   styleUrls: ['./sales.component.scss'],
 })
 export class SalesComponent implements OnInit {
-  private quarter1: IProduct[];
-  private quarter2: IProduct[];
+  private sales: IProduct[];
   public columns: IColumnConfig[] = [];
   public values: IProduct[];
   public activeItem: MenuItem;
 
-  public meniItems: MenuItem[] = [
-    {label: 'Q1 Sales', command: this.menuClickHandler.bind(this)},
-    {label: 'Q2 Sales', command: this.menuClickHandler.bind(this)}
-  ];
+  public menuItems: MenuItem[] = [];
 
 
   constructor(private salesService: SalesService) {}
 
   ngOnInit(): void {
-    this.salesService.getSalesData().subscribe((sales) => {
-      this.quarter1 = sales.slice(0,2);
-      this.quarter2 = sales.slice(2,5);
 
-      this.activeItem = this.meniItems[0];
-      this.values = this.quarter1;
+    for (const label of labels) {
+      this.menuItems.push({label: label, command: this.menuClickHandler.bind(this)});
+    }
+
+    this.salesService.getSalesData().subscribe((sales) => {
+
+      this.activeItem = this.menuItems[0];
+      this.sales = sales;
+      this.values = sales.slice(0,2);
     });
 
     this.columns= columnConfig1;
   }
 
   private menuClickHandler({item}) {
-    switch (item.label) {
-      case `Q1 Sales`:
-        this.values = this.quarter1;
-        this.columns = columnConfig1;
-        break;
-      case `Q2 Sales`:
-        this.values = this.quarter2;
-        this.columns = columnConfig2;
-      default:
-        break;
-    }
+      switch (item.label) {
+        case labels[0]:
+          this.values = this.sales.slice(0,2);
+          this.columns = columnConfig1;
+          break;
+        case labels[1]:
+          this.values = this.sales.slice(2,4);
+          this.columns = columnConfig2;
+          break;
+        case labels[2]:
+          this.values = this.sales.slice(4,6);
+          this.columns = columnConfig3;
+          break;
+        case labels[3]:
+          this.values = this.sales.slice(6,8);
+          this.columns = columnConfig4;
+          break;
+        case labels[4]:
+          this.values = this.sales.slice(8,10);
+          this.columns = columnConfig5;
+          break;
+        case labels[5]:
+          this.values = this.sales.slice(10,12);
+          this.columns = columnConfig6;
+          break;
+
+        default:
+          break;
+      }
   }
 }
