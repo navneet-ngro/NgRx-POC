@@ -7,3 +7,4 @@ export interface IProduct {
     description: string;
 }
 
+export const PRODUCT =  {id: 1, description: ``, productCode: ``, productName: ``, starRating: null};
