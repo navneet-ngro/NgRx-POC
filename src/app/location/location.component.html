@@ -1,0 +1,165 @@
+
+
+<p-tabView styleClass="tabview-custom" [activeIndex]="1">
+  <p-tabPanel>
+    <ng-template pTemplate="header">
+      <span>Personal Reports</span>
+    </ng-template>
+  </p-tabPanel>
+  <p-tabPanel>
+    <ng-template pTemplate="header">
+      <span>Location</span>
+    </ng-template>
+
+    <form [formGroup]="locationForm" class="py-4">
+      <div class="formgrid grid">
+        <div class="field col">
+          <label for="region">Region</label>
+          <p-dropdown
+            id="region"
+            [options]="regions"
+            optionLabel="name"
+            formControlName="region"
+            styleClass="w-full"
+          ></p-dropdown>
+        </div>
+        <div class="field col">
+          <label for="zone">Zone</label>
+          <p-dropdown
+            id="zone"
+            [options]="zones"
+            optionLabel="name"
+            formControlName="zone"
+            styleClass="w-full"
+          ></p-dropdown>
+        </div>
+      </div>
+
+      <div class="formgrid grid">
+        <div class="field col">
+          <label for="region">Subdivision</label>
+          <p-dropdown
+            id="region"
+            [options]="regions"
+            optionLabel="name"
+            styleClass="w-full"
+          ></p-dropdown>
+        </div>
+        <div class="field col">
+          <label for="zone">Branch</label>
+          <p-dropdown
+            id="zone"
+            [options]="zones"
+            optionLabel="name"
+            styleClass="w-full"
+          ></p-dropdown>
+        </div>
+      </div>
+
+      <div class="formgrid grid">
+        <div class="field col">
+          <label for="region">Service Route</label>
+          <p-dropdown
+            id="region"
+            [options]="regions"
+            optionLabel="name"
+            styleClass="w-full"
+          ></p-dropdown>
+        </div>
+        <div class="field col">
+          <label for="zone">Prefix</label>
+          <p-dropdown
+            id="zone"
+            [options]="zones"
+            optionLabel="name"
+            styleClass="w-full"
+          ></p-dropdown>
+        </div>
+      </div>
+
+      <div class="formgrid grid">
+        <div class="field col-3">
+          <label for="low">Mile Post</label>
+          <input id="low" type="text" pInputText placeholder="Low" class="w-full"/>
+        </div>
+        <div class="field col-3">
+          <label for="high" class="opacity-0">Mile Post</label>
+          <input id="high" type="text" pInputText placeholder="High" class="w-full"/>
+        </div>
+        <div class="field col-6">
+          <label for="zone">Country</label>
+          <p-dropdown
+            id="zone"
+            [options]="zones"
+            optionLabel="name"
+            styleClass="w-full"
+          ></p-dropdown>
+        </div>
+      </div>
+
+      <div class="formgrid grid">
+        <div class="field col">
+          <label for="region">State/Province</label>
+          <p-dropdown
+            id="region"
+            [options]="regions"
+            optionLabel="name"
+            styleClass="w-full"
+          ></p-dropdown>
+        </div>
+        <div class="field col">
+          <label for="county">County</label>
+          <p-dropdown
+            id="county"
+            [options]="zones"
+            optionLabel="name"
+            styleClass="w-full"
+          ></p-dropdown>
+        </div>
+      </div>
+
+      <div class="formgrid grid">
+        <div class="field col">
+          <label for="town">Town</label>
+          <input id="town" type="text" pInputText class="block w-full" />
+        </div>
+        <div class="field col">
+          <label for="tunnelName">Tunnel Name</label>
+          <input id="tunnelName" type="text" pInputText class="block w-full" />
+        </div>
+      </div>
+
+      <div class="formgrid grid">
+        <div class="field col-6">
+          <label for="tunnerKey">Tunnel key</label>
+          <input id="tunnerKey" type="text" pInputText class="block w-full" />
+        </div>
+      </div>
+
+      <footer class="formgrid grid">
+        <div class="col-4 pl-0">
+          <button
+            pButton
+            type="button"
+            label="Reset"
+            class="p-button-link"
+          ></button>
+        </div>
+        <div class="col-8">
+          <button
+            pButton
+            type="button"
+            label="Cancel"
+            class="p-button-outlined w-4 mr-4"
+          ></button>
+          <button
+            pButton
+            type="submit"
+            label="Apply"
+            class="p-button-primary w-4"
+          ></button>
+        </div>
+      </footer>
+    </form>
+  </p-tabPanel>
+</p-tabView>

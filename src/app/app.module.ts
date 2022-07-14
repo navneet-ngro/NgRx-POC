@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -20,7 +20,7 @@ import { environment } from 'src/environments/environment';
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     UserModule,
     AppRoutingModule,
     StoreModule.forRoot({}),
@@ -36,7 +36,7 @@ import { environment } from 'src/environments/environment';
     ShellComponent,
     MenuComponent,
     WelcomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   bootstrap: [AppComponent]
 })

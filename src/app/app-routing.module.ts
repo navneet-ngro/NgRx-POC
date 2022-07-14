@@ -22,6 +22,10 @@ const appRoutes: Routes = [
         path: `sales`,
         loadChildren: './sales/sales.module#SalesModule'
       },
+      {
+        path: `location`,
+        loadChildren: './location/location.module#LocationModule'
+      },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
     ]
   },
