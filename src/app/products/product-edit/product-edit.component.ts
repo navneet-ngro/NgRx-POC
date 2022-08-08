@@ -94,13 +94,13 @@ export class ProductEditComponent implements OnInit, OnDestroy {
       if (this.product.id === 0) {
         this.pageTitle = 'Add Product';
       } else {
-        this.pageTitle = `Edit Product: ${this.product.productName}`;
+        this.pageTitle = `Edit Product: ${this.product.name}`;
       }
 
       // Update the data on the form
       this.productForm.patchValue({
-        productName: this.product.productName,
-        productCode: this.product.productCode,
+        productName: this.product.name,
+        productCode: this.product.code,
         starRating: this.product.starRating,
         description: this.product.description
       });
@@ -115,7 +115,7 @@ export class ProductEditComponent implements OnInit, OnDestroy {
 
   deleteProduct(): void {
     if (this.product && this.product.id) {
-      if (confirm(`Really delete the product: ${this.product.productName}?`)) {
+      if (confirm(`Really delete the product: ${this.product.name}?`)) {
         this.productService.deleteProduct(this.product.id).subscribe(
           () => this.productService.changeSelectedProduct(null),
           (err: any) => this.errorMessage = err.error

@@ -1,43 +1,43 @@
 import { IColumnConfig } from "../sales.interface";
 
 export const columnConfig1: IColumnConfig[] = [
-  { field: 'productName' },
-  { field: 'productCode' },
+  { field: 'name' },
+  { field: 'code' },
   { field: 'starRating'  },
   { field: 'description' }
 ];
 
 export const columnConfig2: IColumnConfig[] = [
-  { field: 'productCode' },
-  { field: 'productName' },
+  { field: 'code' },
+  { field: 'name' },
   { field: 'starRating' },
   { field: 'description' }
 ];
 
 export const columnConfig3: IColumnConfig[] = [
-  { field: 'productCode' },
+  { field: 'code' },
   { field: 'starRating' },
-  { field: 'productName' },
+  { field: 'name' },
   { field: 'description' }
 ];
 
 export const columnConfig4: IColumnConfig[] = [
-  { field: 'productCode' },
+  { field: 'code' },
   { field: 'starRating' },
   { field: 'description' },
-  { field: 'productName' },
+  { field: 'name' },
 ];
 
 export const columnConfig5: IColumnConfig[] = [
-  { field: 'productName' },
-  { field: 'productCode' },
+  { field: 'name' },
+  { field: 'code' },
   { field: 'starRating' },
   { field: 'description' }
 ];
 
 export const columnConfig6: IColumnConfig[] = [
-  { field: 'productCode' },
-  { field: 'productName' },
+  { field: 'code' },
+  { field: 'name' },
   { field: 'starRating' },
   { field: 'description' }
 ];

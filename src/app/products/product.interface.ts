@@ -1,10 +1,10 @@
 /* Defines the product entity */
 export interface IProduct {
     id: number | null;
-    productName: string;
-    productCode: string;
+    name: string;
+    code: string;
     starRating: number;
     description: string;
 }
 
-export const PRODUCT =  {id: 1, description: ``, productCode: ``, productName: ``, starRating: null};
+export const PRODUCT =  {id: 1, description: ``, code: ``, name: ``, starRating: null};

@@ -20,7 +20,7 @@ const labels = [
   styleUrls: ['./sales.component.scss'],
 })
 export class SalesComponent implements OnInit {
-  private sales: IProduct[];
+  public sales: IProduct[];
   public columns: IColumnConfig[] = [];
   public values: IProduct[];
   public activeItem: MenuItem;

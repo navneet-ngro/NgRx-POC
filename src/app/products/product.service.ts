@@ -33,8 +33,8 @@ export class ProductService {
   newProduct(): IProduct {
     return {
       id: 0,
-      productName: '',
-      productCode: 'New',
+      name: '',
+      code: 'New',
       description: '',
       starRating: 0
     };
