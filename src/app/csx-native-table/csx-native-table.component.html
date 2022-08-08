@@ -1,0 +1,21 @@
+<h5>HTML Native Table</h5>
+<table class="w-full border-1 native-table">
+  <thead class="border-1">
+    <tr class="border-1">
+      <th class="border-1" *ngFor="let column of columns">
+        <input class="p-inputtext" (change)="onFilterChange($event, column.field)"/>
+      </th>
+    </tr>
+    <tr class="border-1">
+      <th class="border-1" *ngFor="let column of columns">{{ column.field }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-1" *ngFor="let row of rows">
+      <td class="border-1" *ngFor="let column of columns">
+        {{ row[column.field] }}
+      </td>
+    </tr>
+  </tbody>
+  <tfoot></tfoot>
+</table>

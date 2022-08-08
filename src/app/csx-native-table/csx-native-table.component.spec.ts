@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CsxTableComponent } from './csx-table.component';
+import { CsxNativeTableComponent } from './csx-native-table.component';
 
-describe('CsxTableComponent', () => {
-  let component: CsxTableComponent;
-  let fixture: ComponentFixture<CsxTableComponent>;
+describe('CsxNativeTableComponent', () => {
+  let component: CsxNativeTableComponent;
+  let fixture: ComponentFixture<CsxNativeTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CsxTableComponent ]
+      declarations: [ CsxNativeTableComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CsxTableComponent);
+    fixture = TestBed.createComponent(CsxNativeTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

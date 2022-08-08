@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TableModule } from "primeng/table";
 import { TabMenuModule } from "primeng/tabmenu";
-import { CsxTableComponent } from '../csx-table/csx-table.component';
+import { CsxNativeTableModule } from '../csx-native-table/csx-native-table.module';
 import { ProductAPI } from '../products/product-api';
 import { SalesComponent } from './sales.component';
 import { SalesService } from './services/sales.service';
@@ -22,10 +22,11 @@ const routes: Routes = [
     TableModule,
     TabMenuModule,
     RouterModule.forChild(routes),
-    InMemoryWebApiModule.forFeature(ProductAPI)
+    InMemoryWebApiModule.forFeature(ProductAPI),
+    CsxNativeTableModule
   ],
   exports: [RouterModule],
-  declarations: [SalesComponent, CsxTableComponent],
+  declarations: [SalesComponent],
   providers: [SalesService],
 })
 export class SalesModule { }
